@@ -126,7 +126,7 @@ static PDKeychainBindingsController *sharedInstance = nil;
 {
 	@synchronized (self) {
 		if (sharedInstance == nil) {
-			[[self alloc] init]; // assignment not done here, see allocWithZone
+			[[[self alloc] init] autorelease]; // assignment not done here, see allocWithZone
 		}
 	}
 	
@@ -138,7 +138,7 @@ static PDKeychainBindingsController *sharedInstance = nil;
     @synchronized(self) {
         if (sharedInstance == nil) {
             sharedInstance = [super allocWithZone:zone];
-            return sharedInstance;  // assignment and return on first allocation
+            return [sharedInstance retain];  // assignment and return on first allocation
         }
     }
 	
