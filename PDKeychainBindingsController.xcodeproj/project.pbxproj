@@ -709,6 +709,7 @@
 					"-all_load",
 				);
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s i386";
 			};
 			name = Debug;
 		};
@@ -728,6 +729,7 @@
 					"-all_load",
 				);
 				SDKROOT = iphoneos;
+				VALID_ARCHS = "armv7 armv7s i386";
 			};
 			name = Release;
 		};
