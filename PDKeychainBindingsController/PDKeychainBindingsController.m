@@ -39,7 +39,7 @@ static PDKeychainBindingsController *sharedInstance = nil;
                            nil];
 	
     CFDataRef stringData = NULL;
-    status = SecItemCopyMatching((CFDictionaryRef)query, (CFTypeRef*)&stringData);
+    status = SecItemCopyMatching((__bridge CFDictionaryRef)query, (CFTypeRef*)&stringData);
 #else //OSX
     //SecKeychainItemRef item = NULL;
     UInt32 stringLength;
@@ -51,10 +51,10 @@ static PDKeychainBindingsController *sharedInstance = nil;
 	if(status) return nil;
 	
 #if TARGET_OS_IPHONE
-    NSString *string = [[[NSString alloc] initWithData:(id)stringData encoding:NSUTF8StringEncoding] autorelease];
+    NSString *string = [[NSString alloc] initWithData:(__bridge id)stringData encoding:NSUTF8StringEncoding];
     CFRelease(stringData);
 #else //OSX
-    NSString *string = [[[NSString alloc] initWithBytes:stringBuffer length:stringLength encoding:NSUTF8StringEncoding] autorelease];
+    NSString *string = [[NSString alloc] initWithBytes:stringBuffer length:stringLength encoding:NSUTF8StringEncoding];
     SecKeychainItemFreeAttributesAndData(NULL, stringBuffer);
 #endif
 	return string;	
@@ -65,10 +65,10 @@ static PDKeychainBindingsController *sharedInstance = nil;
 	if (!string)  {
 		//Need to delete the Key 
 #if TARGET_OS_IPHONE
-        NSDictionary *spec = [NSDictionary dictionaryWithObjectsAndKeys:(id)kSecClassGenericPassword, kSecClass,
+        NSDictionary *spec = [NSDictionary dictionaryWithObjectsAndKeys:(__bridge id)kSecClassGenericPassword, kSecClass,
                               key, kSecAttrAccount,[self serviceName], kSecAttrService, nil];
         
-        return !SecItemDelete((CFDictionaryRef)spec);
+        return !SecItemDelete((__bridge CFDictionaryRef)spec);
 #else //OSX
         SecKeychainItemRef item = NULL;
         OSStatus status = SecKeychainFindGenericPassword(NULL, (uint) [[self serviceName] lengthOfBytesUsingEncoding:NSUTF8StringEncoding], [[self serviceName] UTF8String],
@@ -81,18 +81,18 @@ static PDKeychainBindingsController *sharedInstance = nil;
     } else {
 #if TARGET_OS_IPHONE
         NSData *stringData = [string dataUsingEncoding:NSUTF8StringEncoding];
-        NSDictionary *spec = [NSDictionary dictionaryWithObjectsAndKeys:(id)kSecClassGenericPassword, kSecClass,
+        NSDictionary *spec = [NSDictionary dictionaryWithObjectsAndKeys:(__bridge id)kSecClassGenericPassword, kSecClass,
                               key, kSecAttrAccount,[self serviceName], kSecAttrService, nil];
         
         if(!string) {
-            return !SecItemDelete((CFDictionaryRef)spec);
+            return !SecItemDelete((__bridge CFDictionaryRef)spec);
         }else if([self stringForKey:key]) {
-            NSDictionary *update = [NSDictionary dictionaryWithObject:stringData forKey:(id)kSecValueData];
-            return !SecItemUpdate((CFDictionaryRef)spec, (CFDictionaryRef)update);
+            NSDictionary *update = [NSDictionary dictionaryWithObject:stringData forKey:(__bridge id)kSecValueData];
+            return !SecItemUpdate((__bridge CFDictionaryRef)spec, (__bridge CFDictionaryRef)update);
         }else{
             NSMutableDictionary *data = [NSMutableDictionary dictionaryWithDictionary:spec];
-            [data setObject:stringData forKey:(id)kSecValueData];
-            return !SecItemAdd((CFDictionaryRef)data, NULL);
+            [data setObject:stringData forKey:(__bridge id)kSecValueData];
+            return !SecItemAdd((__bridge CFDictionaryRef)data, NULL);
         }
 #else //OSX
         SecKeychainItemRef item = NULL;
@@ -124,58 +124,13 @@ static PDKeychainBindingsController *sharedInstance = nil;
 
 + (PDKeychainBindingsController *)sharedKeychainBindingsController 
 {
-	@synchronized (self) {
-		if (sharedInstance == nil) {
-			[[[self alloc] init] autorelease]; // assignment not done here, see allocWithZone
-		}
-	}
-	
-	return sharedInstance;   
-}
+    static dispatch_once_t onceQueue;
 
-+ (id)allocWithZone:(NSZone *)zone
-{
-    @synchronized(self) {
-        if (sharedInstance == nil) {
-            sharedInstance = [super allocWithZone:zone];
-            return [sharedInstance retain];  // assignment and return on first allocation
-        }
-    }
-	
-    return nil; //on subsequent allocation attempts return nil
-}
+    dispatch_once(&onceQueue, ^{
+        sharedInstance = [[self alloc] init];
+    });
 
-- (id)copyWithZone:(NSZone *)zone
-{
-    return self;
-}
-
-- (id)retain
-{
-    return self;
-}
-
-- (oneway void)release
-{
-    //do nothing
-}
-
-- (id)autorelease
-{
-    return self;
-}
-
-- (NSUInteger)retainCount
-{
-    return NSUIntegerMax;  // This is sooo not zero
-}
-
-- (id)init
-{
-	@synchronized(self) {
-		[super init];	
-		return self;
-	}
+	return sharedInstance;
 }
 
 #pragma mark -
