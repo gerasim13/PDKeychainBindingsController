@@ -671,7 +671,6 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = PDKeychainBindingsControllerIOS;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 i386 x86_64 armv7s arm64";
 			};
 			name = Debug;
 		};
@@ -685,7 +684,6 @@
 				PREBINDING = NO;
 				PRODUCT_NAME = PDKeychainBindingsControllerIOS;
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 i386 x86_64 armv7s arm64";
 				ZERO_LINK = NO;
 			};
 			name = Release;
@@ -699,17 +697,15 @@
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = DEBUG;
 				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
-				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
-				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-ObjC",
 					"-all_load",
 				);
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s i386";
+				VALID_ARCHS = "armv7 armv7s i386 x86_64 amd64";
 			};
 			name = Debug;
 		};
@@ -719,7 +715,6 @@
 				CLANG_ENABLE_OBJC_ARC = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.3;
@@ -729,7 +724,7 @@
 					"-all_load",
 				);
 				SDKROOT = iphoneos;
-				VALID_ARCHS = "armv7 armv7s i386";
+				VALID_ARCHS = "armv7 armv7s i386 x86_64 amd64";
 			};
 			name = Release;
 		};
