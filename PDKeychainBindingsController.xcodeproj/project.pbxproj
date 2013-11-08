@@ -705,6 +705,7 @@
 					"-all_load",
 				);
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv7 armv7s i386 x86_64 amd64";
 			};
 			name = Debug;
@@ -724,6 +725,7 @@
 					"-all_load",
 				);
 				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
 				VALID_ARCHS = "armv7 armv7s i386 x86_64 amd64";
 			};
 			name = Release;
