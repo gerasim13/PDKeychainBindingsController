@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
+   LastUpgradeVersion = "0510"
    version = "1.8">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,15 +16,15 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D39ABDEE13CA80D90078DA13"
                BuildableName = "PDKeychainBindingsControllerOSXExample.app"
-               BlueprintName = "PDKeychainBindingsControllerOSXExample"
+               BlueprintName = "PDKeychainBCOSXExample"
                ReferencedContainer = "container:PDKeychainBindingsController.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       shouldUseLaunchSchemeArgsEnv = "YES"
       buildConfiguration = "Debug">
       <Testables>
@@ -33,15 +34,15 @@
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "D39ABE0D13CA80D90078DA13"
                BuildableName = "PDKeychainBindingsControllerOSXExampleTests.octest"
-               BlueprintName = "PDKeychainBindingsControllerOSXExampleTests"
+               BlueprintName = "PDKeychainBCOSXTests"
                ReferencedContainer = "container:PDKeychainBindingsController.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
    </TestAction>
    <LaunchAction
-      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.GDB"
-      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.GDB"
+      selectedDebuggerIdentifier = "Xcode.DebuggerFoundation.Debugger.LLDB"
+      selectedLauncherIdentifier = "Xcode.DebuggerFoundation.Launcher.LLDB"
       displayScaleIsEnabled = "NO"
       displayScale = "1.00"
       launchStyle = "0"
@@ -55,7 +56,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D39ABDEE13CA80D90078DA13"
             BuildableName = "PDKeychainBindingsControllerOSXExample.app"
-            BlueprintName = "PDKeychainBindingsControllerOSXExample"
+            BlueprintName = "PDKeychainBCOSXExample"
             ReferencedContainer = "container:PDKeychainBindingsController.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
@@ -75,7 +76,7 @@
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "D39ABDEE13CA80D90078DA13"
             BuildableName = "PDKeychainBindingsControllerOSXExample.app"
-            BlueprintName = "PDKeychainBindingsControllerOSXExample"
+            BlueprintName = "PDKeychainBCOSXExample"
             ReferencedContainer = "container:PDKeychainBindingsController.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
