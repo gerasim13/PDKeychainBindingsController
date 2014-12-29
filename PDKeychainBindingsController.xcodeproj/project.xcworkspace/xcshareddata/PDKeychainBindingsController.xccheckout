@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
+	<false/>
+	<key>IDESourceControlProjectIdentifier</key>
+	<string>C5462256-60B5-45C0-A048-3F36560FB452</string>
+	<key>IDESourceControlProjectName</key>
+	<string>PDKeychainBindingsController</string>
+	<key>IDESourceControlProjectOriginsDictionary</key>
+	<dict>
+		<key>14175140-11AE-41D1-A441-7427B71441BA</key>
+		<string>ssh://github.com/moxery/PDKeychainBindingsController.git</string>
+	</dict>
+	<key>IDESourceControlProjectPath</key>
+	<string>PDKeychainBindingsController.xcodeproj/project.xcworkspace</string>
+	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
+	<dict>
+		<key>14175140-11AE-41D1-A441-7427B71441BA</key>
+		<string>../..</string>
+	</dict>
+	<key>IDESourceControlProjectURL</key>
+	<string>ssh://github.com/moxery/PDKeychainBindingsController.git</string>
+	<key>IDESourceControlProjectVersion</key>
+	<integer>110</integer>
+	<key>IDESourceControlProjectWCCIdentifier</key>
+	<string>14175140-11AE-41D1-A441-7427B71441BA</string>
+	<key>IDESourceControlProjectWCConfigurations</key>
+	<array>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>14175140-11AE-41D1-A441-7427B71441BA</string>
+			<key>IDESourceControlWCCName</key>
+			<string>PDKeychainBindingsController</string>
+		</dict>
+	</array>
+</dict>
+</plist>

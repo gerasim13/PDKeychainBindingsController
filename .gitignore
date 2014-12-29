@@ -1,2 +1,7 @@
-PDKeychainBindingsController.xcodeproj/xcuserdata
-PDKeychainBindingsController.xcodeproj/project.xcworkspace/xcuserdata
+*~
+*.o
+*.pbxuser
+*.mode1v3
+*.DS_Store
+xcuserdata
+build
