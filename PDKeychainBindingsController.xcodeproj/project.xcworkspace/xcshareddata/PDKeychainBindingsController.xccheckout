@@ -10,29 +10,41 @@
 	<string>PDKeychainBindingsController</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>14175140-11AE-41D1-A441-7427B71441BA</key>
-		<string>ssh://github.com/moxery/PDKeychainBindingsController.git</string>
+		<key>B2C78D8D0B7F3573DBB9878F443675C614EA8362</key>
+		<string>https://github.com/gerasim13/PDKeychainBindingsController.git</string>
+		<key>DCC7AE6092786873AC425FC00C3FC4194F989617</key>
+		<string>https://bitbucket.org/gerasim13/molodejj.tv.git</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>PDKeychainBindingsController.xcodeproj/project.xcworkspace</string>
+	<string>PDKeychainBindingsController.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>14175140-11AE-41D1-A441-7427B71441BA</key>
+		<key>B2C78D8D0B7F3573DBB9878F443675C614EA8362</key>
 		<string>../..</string>
+		<key>DCC7AE6092786873AC425FC00C3FC4194F989617</key>
+		<string>../../../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://github.com/moxery/PDKeychainBindingsController.git</string>
+	<string>https://github.com/gerasim13/PDKeychainBindingsController.git</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>14175140-11AE-41D1-A441-7427B71441BA</string>
+	<string>B2C78D8D0B7F3573DBB9878F443675C614EA8362</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>14175140-11AE-41D1-A441-7427B71441BA</string>
+			<string>DCC7AE6092786873AC425FC00C3FC4194F989617</string>
+			<key>IDESourceControlWCCName</key>
+			<string>..</string>
+		</dict>
+		<dict>
+			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
+			<string>public.vcs.git</string>
+			<key>IDESourceControlWCCIdentifierKey</key>
+			<string>B2C78D8D0B7F3573DBB9878F443675C614EA8362</string>
 			<key>IDESourceControlWCCName</key>
 			<string>PDKeychainBindingsController</string>
 		</dict>

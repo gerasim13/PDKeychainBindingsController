@@ -24,7 +24,7 @@
 
 - (void)testStandardBindingsExists
 {
-    STAssertNotNil([PDKeychainBindings sharedKeychainBindings], @"PDKeychainBindings sharedKeychainBindings was nil!!");
+    XCTAssertNotNil([PDKeychainBindings sharedKeychainBindings], @"PDKeychainBindings sharedKeychainBindings was nil!!");
 }
 
 - (void)testStandardBindingsWorksAtAll
@@ -36,8 +36,8 @@
     [[PDKeychainBindings sharedKeychainBindings] setObject:targetString forKey:@"testObject"];
     
     //Now make sure it got set correctly
-    STAssertNotNil([[PDKeychainBindings sharedKeychainBindings] objectForKey:@"testObject"], @"PDKeychainBindings sharedKeychainBindings was nil!!");
-    STAssertEquals(targetString, [[PDKeychainBindings sharedKeychainBindings] objectForKey:@"testObject"], @"Did not retrieve object correctly");
+    XCTAssertNotNil([[PDKeychainBindings sharedKeychainBindings] objectForKey:@"testObject"], @"PDKeychainBindings sharedKeychainBindings was nil!!");
+    XCTAssertEqual(targetString, [[PDKeychainBindings sharedKeychainBindings] objectForKey:@"testObject"], @"Did not retrieve object correctly");
     
     //Now clean up after ourselves
     [[PDKeychainBindings sharedKeychainBindings] removeObjectForKey:@"testObject"];
@@ -62,13 +62,13 @@
     CFDataRef stringData = NULL;
     OSStatus status = SecItemCopyMatching((__bridge CFDictionaryRef)query, (CFTypeRef*)&stringData);
     
-    STAssertEquals((uint) 0, (uint) status, @"Failed to retrive data, status was '%i'", status);
+    XCTAssertEqual((uint) 0, (uint) status, @"Failed to retrive data, status was '%i'", status);
     
     NSString *string = [[NSString alloc] initWithData:(__bridge id)stringData encoding:NSUTF8StringEncoding];
-    STAssertEqualObjects(string, targetString, @"retrieved string from keychain '%@' not equal to expected 'foo'", string);
+    XCTAssertEqualObjects(string, targetString, @"retrieved string from keychain '%@' not equal to expected 'foo'", string);
     
-    STAssertNotNil([[PDKeychainBindings sharedKeychainBindings] objectForKey:@"keychainRetrievalTestObject"], @"PDKeychainBindings sharedKeychainBindings was nil!!");
-    STAssertEquals(targetString, [[PDKeychainBindings sharedKeychainBindings] objectForKey:@"keychainRetrievalTestObject"], @"Did not retrieve object correctly");
+    XCTAssertNotNil([[PDKeychainBindings sharedKeychainBindings] objectForKey:@"keychainRetrievalTestObject"], @"PDKeychainBindings sharedKeychainBindings was nil!!");
+    XCTAssertEqual(targetString, [[PDKeychainBindings sharedKeychainBindings] objectForKey:@"keychainRetrievalTestObject"], @"Did not retrieve object correctly");
     
     //Now clean up after ourselves
     [[PDKeychainBindings sharedKeychainBindings] removeObjectForKey:@"keychainRetrievalTestObject"];
