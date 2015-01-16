@@ -13,8 +13,8 @@
 		4D07B6ED13F0C376007D98DF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3DEB64613CFA0180059B963 /* Security.framework */; };
 		4D07B6EE13F0C37B007D98DF /* PDKeychainBindings.m in Sources */ = {isa = PBXBuildFile; fileRef = D39ABE6D13CA85E40078DA13 /* PDKeychainBindings.m */; };
 		4D07B6EF13F0C37C007D98DF /* PDKeychainBindingsController.m in Sources */ = {isa = PBXBuildFile; fileRef = D39ABE5F13CA81550078DA13 /* PDKeychainBindingsController.m */; };
-		4D07B6F213F0C387007D98DF /* PDKeychainBindingsController.h in Headers */ = {isa = PBXBuildFile; fileRef = D39ABE5E13CA81550078DA13 /* PDKeychainBindingsController.h */; };
-		4D07B6F313F0C388007D98DF /* PDKeychainBindings.h in Headers */ = {isa = PBXBuildFile; fileRef = D39ABE6C13CA85E40078DA13 /* PDKeychainBindings.h */; };
+		4D07B6F213F0C387007D98DF /* PDKeychainBindingsController.h in Headers */ = {isa = PBXBuildFile; fileRef = D39ABE5E13CA81550078DA13 /* PDKeychainBindingsController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4D07B6F313F0C388007D98DF /* PDKeychainBindings.h in Headers */ = {isa = PBXBuildFile; fileRef = D39ABE6C13CA85E40078DA13 /* PDKeychainBindings.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D39ABE2913CA81090078DA13 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39ABDB213CA80B50078DA13 /* UIKit.framework */; };
 		D39ABE2A13CA81090078DA13 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39ABDB413CA80B50078DA13 /* Foundation.framework */; };
 		D39ABE2B13CA81090078DA13 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39ABDB613CA80B50078DA13 /* CoreGraphics.framework */; };
@@ -381,8 +381,10 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				PREBINDING = NO;
 				PRODUCT_NAME = PDKeychainBindingsControllerIOS;
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PRODUCT_NAME)";
 				SDKROOT = iphoneos;
 			};
 			name = Debug;
@@ -394,8 +396,10 @@
 				COPY_PHASE_STRIP = YES;
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				INSTALL_PATH = "$(BUILT_PRODUCTS_DIR)";
 				PREBINDING = NO;
 				PRODUCT_NAME = PDKeychainBindingsControllerIOS;
+				PUBLIC_HEADERS_FOLDER_PATH = "include/$(PRODUCT_NAME)";
 				SDKROOT = iphoneos;
 				ZERO_LINK = NO;
 			};

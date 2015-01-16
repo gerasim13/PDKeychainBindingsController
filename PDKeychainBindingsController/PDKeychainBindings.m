@@ -17,8 +17,6 @@
 
 - objectForKey:(NSString*)defaultName
 {
-  //return PDKeychainBindingsController.sharedKeychainBindingsController.valueBuffer[defaultName];
-
   return [PDKeychainBindingsController.sharedKeychainBindingsController
    valueForKeyPath:[NSString stringWithFormat:@"values.%@",defaultName]];
 }
